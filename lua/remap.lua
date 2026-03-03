@@ -10,6 +10,7 @@ vim.keymap.set('n', 'grn', ":IncRename ", { desc = 'LSP rename' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 -- Ctrl + Shift + I format
 vim.keymap.set("n", "<C-S-i>", vim.lsp.buf.format, { desc = "LSP format" })
+vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP go to definition" })
 
 -- Terminal
 vim.keymap.set('n', '<C-`>', function() vim.cmd("12split | terminal") end, { desc = 'Open a terminal in a split screen' })

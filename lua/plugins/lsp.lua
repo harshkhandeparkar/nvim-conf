@@ -8,7 +8,8 @@ return {
                 opts = {
 					preview_empty_name = true
 				}
-            }
+            },
+			{ "rhaiscript/vim-rhai" } -- For ewwii rhai (NOT an LSP)
         },
         init = function()
             -- vim.g.coq_settings = {
