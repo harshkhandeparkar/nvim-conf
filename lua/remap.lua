@@ -3,6 +3,7 @@ vim.g.maplocalleader = "\\"
 
 -- Tab in insert mode goes to the current intent level
 vim.keymap.set('i', '<Tab>', '<C-f>')
+vim.keymap.set('i', '<S-Tab>', "<Tab>")
 
 -- LSP keybinds
 -- SEE telescope.lua for telescope diagnostics keybind

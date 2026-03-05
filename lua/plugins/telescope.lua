@@ -10,7 +10,7 @@ return {
 			vim.keymap.set('n', '<leader>ff', ts.find_files, { desc = 'Telescope find files' })
 			vim.keymap.set('n', '<leader>F', ts.live_grep, { desc = 'Telescope live grep global search' })
 			vim.keymap.set('n', '<C-p>', ts.git_files, { desc = 'Telescope search git files' })
-			vim.keymap.set('n', '<leader>td', ts.diagnostics, { desc = 'Telescope show diagnostics' })
+			vim.keymap.set('n', '<leader>td', function() ts.diagnostics({bufnr = 0}) end, { desc = 'Telescope show diagnostics' })
 		end
 	}
 }
