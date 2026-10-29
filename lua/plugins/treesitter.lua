@@ -1,12 +1,17 @@
 return {
-	{
-  		'nvim-treesitter/nvim-treesitter',
-		lazy = false,
-		build = ':TSUpdate',
-		config = function()
-			vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-		end
-	}
+	-- {
+	--  		'nvim-treesitter/nvim-treesitter',
+	-- 	lazy = false,
+	-- 	build = ':TSUpdate',
+	-- 	opts = {
+	-- 		ensure_installed = {
+	-- 			"svelte", "typescript", "html", "css"
+	-- 		},
+	-- 		highlight = {
+	-- 			enabled = true
+	-- 		}
+	-- 	}
+	-- }
 }
 
 

@@ -37,10 +37,25 @@ return {
             })
 
 			vim.lsp.enable("rust_analyzer")
+
+			-- Format on save for Rust files
+			vim.api.nvim_create_autocmd("BufWritePre", {
+				pattern = "*.rs",
+				callback = function()
+					vim.lsp.buf.format({ async = false })
+				end,
+			})
+
 			vim.lsp.enable("ts_ls")
 			vim.lsp.enable("lua_ls")
-			vim.lsp.enable("ty")
+			-- vim.lsp.enable("ty")
+			vim.lsp.enable("pyright")
+			vim.lsp.enable("ruff")
 			vim.lsp.enable("zls")
+			vim.lsp.enable("superhtml")
+			vim.lsp.enable("cssls")
+			vim.lsp.enable("svelte")
+			vim.lsp.enable("clangd")
 		end
 	}
 }

@@ -1,7 +1,7 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
--- Tab in insert mode goes to the current intent level
+-- Tab in insert mode goes to the current indent level
 vim.keymap.set('i', '<Tab>', '<C-f>')
 vim.keymap.set('i', '<S-Tab>', "<Tab>")
 
@@ -11,12 +11,18 @@ vim.keymap.set('n', 'grn', ":IncRename ", { desc = 'LSP rename' })
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float)
 -- Ctrl + Shift + I format
 vim.keymap.set("n", "<C-S-i>", vim.lsp.buf.format, { desc = "LSP format" })
+vim.keymap.set("v", "<C-S-i>", "gq", { desc = "LSP format selection" })
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "LSP go to definition" })
 
 -- Terminal
 vim.keymap.set('n', '<C-`>', function() vim.cmd("12split | terminal") end, { desc = 'Open a terminal in a split screen' })
-vim.keymap.set('n', '<C-t>', function() vim.cmd("tabnew | terminal") end, { desc = 'Open a terminal in a new tab' })
 vim.keymap.set('t', '<Esc>', '<C-\\><C-n>')
+-- vim.keymap.set('n', '<C-t>', function() vim.cmd("tabnew | terminal") end, { desc = 'Open a terminal in a new tab' })
+
+-- Tabs
+vim.keymap.set('n', '<C-Tab>', "gt", { desc = 'Select the next tab' })
+vim.keymap.set('n', '<C-S-Tab>', "gT", { desc = 'Select the previous tab' })
+vim.keymap.set('n', '<C-t>', vim.cmd.tabnew, { desc = 'Open a new tab' })
 
 -- Show netrw file explorer
 vim.keymap.set("n", "<leader>fs", vim.cmd.Ex)
